@@ -9,6 +9,10 @@
   <span>{{ item.price | currency }}</span>
 </div>
 
+<div class="cart-item">
+  Subtotal = {{ subtotal }}
+</div>
+
 <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
 
   <div>

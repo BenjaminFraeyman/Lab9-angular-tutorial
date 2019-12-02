@@ -28,4 +28,13 @@ export class CartService {
   getShippingPrices() {
     return this.http.get('/assets/shipping.json');
   }
+
+  getSum() {
+    let sum = 0;
+    for(let i = 0; i < this.items.length; i++) {
+        sum += this.items[i].price;
+    }
+    console.warn(sum);
+    return sum;
+  }
 }

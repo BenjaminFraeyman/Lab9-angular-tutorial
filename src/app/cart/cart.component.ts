@@ -11,13 +11,14 @@ import { CartService } from '../cart.service';
 export class CartComponent implements OnInit {
   items;
   checkoutForm;
+  subtotal;
 
   constructor(
     private cartService: CartService,
     private formBuilder: FormBuilder,
   ) {
     this.items = this.cartService.getItems();
-
+    this.subtotal = this.cartService.getSum();
     this.checkoutForm = this.formBuilder.group({
       name: '',
       address: ''
